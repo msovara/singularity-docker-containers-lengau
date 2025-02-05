@@ -33,6 +33,15 @@ Check if the image works and manually verify its metadata:
 singularity run wsclean_latest.sif
 singularity inspect wsclean_latest.sif
 ```
+### 5. Check Basic Metadata and List Installed packages
+For Debian/Ubuntu-based containers
+```
+singularity exec wsclean_latest.sif dpkg --list
+```
+For CentOS/RHEL-based containers
+```
+singularity exec wsclean_latest.sif rpm -qa
+```
 
 ---
 
