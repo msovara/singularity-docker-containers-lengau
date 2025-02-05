@@ -39,8 +39,15 @@ module list
 ```
 singularity shell wsclean_latest.sif
 ```
-6. ## Run a specific command
+3. ## Run a specific command
 ```
 singularity exec wsclean_latest.sif wsclean --help
 ```
+4. ## Binding a Host Directory
+If you need to work with files on your host system, you should bind a directory:
+```
+singularity exec --bind /your/data/dir:/mnt wsclean_latest.sif wsclean -i /mnt/input.fits -o /mnt/output
+```
+- Replace /your/data/dir with the actual path to your working directory.
+- Inside the container, your files will be available under /mnt.
    
